@@ -1,19 +1,16 @@
 import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { LIGHT_THEME } from "../../constants/themeConstants";
-import LogoBlue from "../../assets/images/logo_blue.svg";
-import LogoWhite from "../../assets/images/logo_white.svg";
 import {
-  MdOutlineAttachMoney,
-  MdOutlineBarChart,
   MdOutlineClose,
-  MdOutlineCurrencyExchange,
   MdOutlineGridView,
-  MdOutlineLogout,
-  MdOutlineMessage,
+  MdOutlineBarChart,
+  MdOutlineAttachMoney,
+  MdOutlineCurrencyExchange,
+  MdOutlineShoppingBag,
   MdOutlinePeople,
   MdOutlineSettings,
-  MdOutlineShoppingBag,
+  MdOutlineLogout,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "./Sidebar.scss";
@@ -29,7 +26,7 @@ const Sidebar = () => {
     if (
       navbarRef.current &&
       !navbarRef.current.contains(event.target) &&
-      event.target.className !== "sidebar-oepn-btn"
+      event.target.className !== "sidebar-open-btn"
     ) {
       closeSidebar();
     }
@@ -49,8 +46,7 @@ const Sidebar = () => {
     >
       <div className="sidebar-top">
         <div className="sidebar-brand">
-          <img src={theme === LIGHT_THEME ? LogoBlue : LogoWhite} alt="" />
-          <span className="sidebar-brand-text">tabernam.</span>
+          <span className="sidebar-brand-text">LYT</span>
         </div>
         <button className="sidebar-close-btn" onClick={closeSidebar}>
           <MdOutlineClose size={24} />
@@ -98,7 +94,6 @@ const Sidebar = () => {
                 </span>
                 <span className="menu-link-text">Media</span>
               </Link>
-              
             </li>
             <li className="menu-item">
               <Link to="/" className="menu-link">
@@ -116,11 +111,10 @@ const Sidebar = () => {
                 <span className="menu-link-text">Settings</span>
               </Link>
             </li>
-              </ul>
+          </ul>
         </div>
         <div className="sidebar-menu sidebar-menu2">
           <ul className="menu-list">
-            
             <li className="menu-item">
               <Link to="/" className="menu-link">
                 <span className="menu-link-icon">
